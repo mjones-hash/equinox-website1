@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Equinox Lighting | Permanent LED Lighting Solutions for NC</title>
+    <meta name="description" content="Residential and commercial permanent LED lighting services across North Carolina. Holiday lights, security lighting, landscape lighting, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --miami-pink: #FF1B8D;
+            --cyan-blue: #00d4ff;
+            --navy: #1a1a2e;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+        }
+
+        /* Header - Same as About */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--miami-pink);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 27, 141, 0.4);
+        }
+
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 180px 2rem 100px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Overview */
+        .services-intro {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 50px;
+            text-align: center;
+        }
+
+        .services-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: var(--navy);
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* Main Services */
+        .main-services {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 2rem 100px;
+        }
+
+        .service-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .service-block:nth-child(even) {
+            direction: rtl;
+        }
+
+        .service-block:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .service-image {
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .service-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .service-features li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-blue);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .learn-more {
+            display: inline-block;
+            color: var(--miami-pink);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: var(--cyan-blue);
+            transform: translateX(5px);
+        }
+
+        /* Additional Services */
+        .additional-services {
+            background: var(--light-gray);
+            padding: 100px 2rem;
+        }
+
+        .additional-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .additional-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .additional-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 27, 141, 0.15);
+        }
+
+        .additional-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .additional-card h4 {
+            font-size: 1.6rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .additional-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-white {
+            background: white;
+            color: var(--navy);
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cyan-blue);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--miami-pink);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-block,
+            .additional-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <svg class="logo-svg" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="62.5" y1="50" x2="287.5" y2="50" stroke="#00d4ff" stroke-width="2.5" opacity="0.4"/>
+                    <circle cx="62.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="118.75" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="175" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="231.25" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="287.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="62.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="118.75" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="175" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="231.25" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="287.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <text x="175" y="110" font-family="'Bebas Neue', sans-serif" font-size="48" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="2">EQUINOX</text>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Free Estimate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Our Services</h1>
+        <p>Professional permanent LED lighting solutions for every need—from holiday displays to year-round architectural enhancement.</p>
+    </section>
+
+    <!-- Services Intro -->
+    <section class="services-intro">
+        <h2>Complete Permanent Lighting Solutions</h2>
+        <p>As an authorized Jellyfish Lighting dealer, we install the industry's most advanced permanent LED lighting system. Our solutions are designed to enhance your property's beauty, increase security, and eliminate the hassle of seasonal decorating forever.</p>
+    </section>
+
+    <!-- Main Services -->
+    <section class="main-services">
+        <!-- Residential -->
+        <div class="service-block">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Residential permanent lighting">
+                <div class="service-badge">Most Popular</div>
+            </div>
+            <div class="service-content">
+                <h3>Residential Permanent Lighting</h3>
+                <p>Transform your home with custom permanent LED lighting that adapts to any occasion. Control over 16 million colors from your smartphone and create the perfect ambiance for holidays, game days, or everyday elegance.</p>
+                <ul class="service-features">
+                    <li>Nearly invisible installation under eaves and trim</li>
+                    <li>App-controlled with 102 preset patterns</li>
+                    <li>Smart home integration (Alexa, Google Home)</li>
+                    <li>Programmable schedules for automated lighting</li>
+                    <li>Energy-efficient LED technology</li>
+                    <li>UV-protected lights prevent yellowing</li>
+                    <li>Comprehensive warranty coverage</li>
+                </ul>
+                <a href="contact.html" class="learn-more">Get Free Estimate →</a>
+            </div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="service-block">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Commercial lighting">
+            </div>
+            <div class="service-content">
+                <h3>Commercial Lighting</h3>
+                <p>Make your business stand out with professional permanent LED lighting. Enhance curb appeal, attract customers, and create memorable brand experiences with customizable color displays.</p>
+                <ul class="service-features">
+                    <li>Brand color matching capabilities</li>
+                    <li>Seasonal promotional displays</li>
+                    <li>Enhanced security lighting</li>
+                    <li>Low maintenance, long-lasting solution</li>
+                    <li>Energy-efficient operation reduces costs</li>
+                    <li>Professional installation with minimal disruption</li>
+                    <li>Flexible financing options available</li>
+                </ul>
+                <a href="contact.html" class="learn-more">Request Commercial Quote →</a>
+            </div>
+        </div>
+
+        <!-- Holiday Lighting -->
+        <div class="service-block">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800" alt="Holiday lighting">
+            </div>
+            <div class="service-content">
+                <h3>Year-Round Holiday Lighting</h3>
+                <p>Say goodbye to the annual hassle of installing and removing holiday lights. Our permanent system lets you celebrate every holiday with the tap of a button—no ladders required.</p>
+                <ul class="service-features">
+                    <li>Christmas, Halloween, Fourth of July, and more</li>
+                    <li>Create custom patterns for any occasion</li>
+                    <li>Twinkling, fading, and chasing effects</li>
+                    <li>No storage needed—lights stay up year-round</li>
+                    <li>Change colors instantly via smartphone</li>
+                    <li>Schedule automatic activation</li>
+                    <li>HOA-approved discreet design</li>
+                </ul>
+                <a href="contact.html" class="learn-more">Transform Your Holidays →</a>
+            </div>
+        </div>
+
+        <!-- Security Lighting -->
+        <div class="service-block">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800" alt="Security lighting">
+            </div>
+            <div class="service-content">
+                <h3>Security & Accent Lighting</h3>
+                <p>Illuminate dark areas and deter intruders with bright white security lighting. Use warm accent lighting to enhance architectural features and create welcoming outdoor spaces.</p>
+                <ul class="service-features">
+                    <li>Bright white mode for maximum visibility</li>
+                    <li>Motion detection integration available</li>
+                    <li>Automatic dusk-to-dawn scheduling</li>
+                    <li>Warm white accent lighting for ambiance</li>
+                    <li>Highlight architectural details</li>
+                    <li>Increase property value and curb appeal</li>
+                    <li>Energy-efficient continuous operation</li>
+                </ul>
+                <a href="contact.html" class="learn-more">Enhance Your Security →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="additional-content">
+            <div class="section-header">
+                <h2>Complete Jellyfish Lighting Product Line</h2>
+                <p>We install the full range of Jellyfish Lighting products for comprehensive outdoor illumination</p>
+            </div>
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <div class="additional-icon">🌳</div>
+                    <h4>Landscape Lighting</h4>
+                    <p>Illuminate gardens, pathways, and outdoor living spaces with customizable LED landscape lights. Enhance safety and showcase your property's natural beauty.</p>
+                </div>
+                <div class="additional-card">
+                    <div class="additional-icon">🏠</div>
+                    <h4>Patio Lighting</h4>
+                    <p>Create the perfect outdoor entertainment space with elegant patio lights. Festive or romantic—set the mood for any occasion.</p>
+                </div>
+                <div class="additional-card">
+                    <div class="additional-icon">💡</div>
+                    <h4>Wall & Post Lights</h4>
+                    <p>Add depth and architectural interest with wall lights and versatile post-mounted fixtures tailored to your landscape design.</p>
+                </div>
+                <div class="additional-card">
+                    <div class="additional-icon">🎨</div>
+                    <h4>Custom Zoning</h4>
+                    <p>Divide your home into independent lighting zones. Control front, back, and accent areas separately with unique patterns.</p>
+                </div>
+                <div class="additional-card">
+                    <div class="additional-icon">🏈</div>
+                    <h4>Game Day Lighting</h4>
+                    <p>Show your team spirit with custom color displays. Perfect for Panthers, Hurricanes, Tar Heels, or Wolfpack fans!</p>
+                </div>
+                <div class="additional-card">
+                    <div class="additional-icon">🎉</div>
+                    <h4>Special Events</h4>
+                    <p>Gender reveals, birthdays, graduations—celebrate life's special moments with custom lighting displays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process-section">
+        <div class="section-header">
+            <h2>Our Installation Process</h2>
+            <p>From consultation to completion, we make the process seamless</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Free Consultation</h4>
+                <p>We visit your property, discuss your vision, and provide a detailed quote with no obligation.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Custom Design</h4>
+                <p>Our team creates a lighting plan tailored to your home's architecture and your preferences.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Professional Install</h4>
+                <p>Expert installation with color-matched tracks, attic jumps, and nearly invisible wiring.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>App Training</h4>
+                <p>We teach you how to use the Jellyfish app and create your first custom patterns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Elevate Your Property?</h2>
+        <p>Schedule your free consultation and discover the possibilities of permanent LED lighting.</p>
+        <a href="contact.html" class="cta-white">Get Your Free Estimate</a>
+        <p style="margin-top: 25px; font-size: 1.1rem;">📞 Call us today: <strong>(919) 555-0100</strong></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Equinox Lighting</h4>
+                <p>North Carolina's premier authorized Jellyfish Lighting dealer, serving residential and commercial clients statewide.</p>
+                <p style="margin-top: 20px;">
+                    <strong>Headquarters:</strong><br>
+                    Cary, NC 27511
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="services.html">Residential Lighting</a>
+                <a href="services.html">Commercial Lighting</a>
+                <a href="services.html">Holiday Lighting</a>
+                <a href="services.html">Security Lighting</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:919-555-0100">(919) 555-0100</a>
+                <a href="/cdn-cgi/l/email-protection#0960676f66496c787c606766712465606e617d7a276a6664"><span class="__cf_email__" data-cfemail="bbd2d5ddd4fbdecaced2d5d4c396d7d2dcd3cfc895d8d4d6">[email&#160;protected]</span></a>
+                <p style="margin-top: 15px;">
+                    <strong>Hours:</strong><br>
+                    Mon-Fri: 

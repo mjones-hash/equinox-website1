@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Equinox Lighting | Permanent LED Lighting Project Showcase</title>
+    <meta name="description" content="View our portfolio of permanent LED lighting installations across North Carolina. Before and after photos of residential and commercial projects.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --miami-pink: #FF1B8D;
+            --cyan-blue: #00d4ff;
+            --navy: #1a1a2e;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--miami-pink);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 180px 2rem 100px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Gallery Intro */
+        .gallery-intro {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem 50px;
+            text-align: center;
+        }
+
+        .gallery-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 2rem 100px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 27, 141, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            padding: 30px;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--light-gray);
+            padding: 100px 2rem;
+        }
+
+        .video-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 25px;
+        }
+
+        .video-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .video-placeholder {
+            background: #ddd;
+            border-radius: 20px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--cyan-blue);
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-location {
+            color: var(--miami-pink);
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-white {
+            background: white;
+            color: var(--navy);
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cyan-blue);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--miami-pink);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <svg class="logo-svg" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="62.5" y1="50" x2="287.5" y2="50" stroke="#00d4ff" stroke-width="2.5" opacity="0.4"/>
+                    <circle cx="62.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="118.75" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="175" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="231.25" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="287.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="62.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="118.75" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="175" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="231.25" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="287.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <text x="175" y="110" font-family="'Bebas Neue', sans-serif" font-size="48" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="2">EQUINOX</text>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Free Estimate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Our Work</h1>
+        <p>Explore our portfolio of permanent LED lighting installations across North Carolina.</p>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro">
+        <p>From the coast to the mountains, we've helped hundreds of North Carolina homeowners and businesses transform their properties with beautiful, permanent LED lighting. See the Jellyfish Lighting difference for yourself.</p>
+    </section>
+
+    <!-- Residential Gallery -->
+    <section class="gallery-section">
+        <h2 class="category-title">Residential Projects</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/Accent_1.jpg" alt="Warm white accent lighting on craftsman home">
+                <div class="project-tag">Featured Project</div>
+                <div class="gallery-overlay">
+                    <h3>Modern Craftsman Home</h3>
+                    <p>Elegant warm white accent lighting showcasing architecture</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Accent_2.jpg" alt="Mountain home with architectural lighting">
+                <div class="project-tag">Mountain Region</div>
+                <div class="gallery-overlay">
+                    <h3>Mountain Modern Estate</h3>
+                    <p>Stunning starlit accent lighting on contemporary home</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/XMAS_1.jpg" alt="Christmas holiday lighting red and green">
+                <div class="project-tag">Holiday Lighting</div>
+                <div class="gallery-overlay">
+                    <h3>Classic Christmas Display</h3>
+                    <p>Traditional red and green holiday lighting</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/XMAS_2.jpg" alt="Multi-color Christmas lighting">
+                <div class="project-tag">Holiday Lighting</div>
+                <div class="gallery-overlay">
+                    <h3>Festive Holiday Colors</h3>
+                    <p>Vibrant multi-zone Christmas lighting display</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/RWB_1.jpg" alt="Red white and blue patriotic lighting">
+                <div class="project-tag">Game Day / Patriotic</div>
+                <div class="gallery-overlay">
+                    <h3>Red, White & Blue</h3>
+                    <p>Patriotic display for 4th of July celebrations</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/RWB_2.jpg" alt="American flag colors on house">
+                <div class="project-tag">Game Day / Patriotic</div>
+                <div class="gallery-overlay">
+                    <h3>American Pride Display</h3>
+                    <p>Custom zone lighting for patriotic occasions</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/PATIO_1.jpg" alt="Patio string lights outdoor living">
+                <div class="project-tag">Patio Lighting</div>
+                <div class="gallery-overlay">
+                    <h3>Outdoor Living Space</h3>
+                    <p>Elegant patio lighting for entertaining</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/PATIO_2.jpg" alt="Backyard patio lights with pergola">
+                <div class="project-tag">Patio Lighting</div>
+                <div class="gallery-overlay">
+                    <h3>Pergola Patio Lights</h3>
+                    <p>Warm ambiance for outdoor gatherings</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/PATIO_3.jpg" alt="Pool and patio lighting purple">
+                <div class="project-tag">Patio Lighting</div>
+                <div class="gallery-overlay">
+                    <h3>Pool & Entertainment Area</h3>
+                    <p>Custom color patio lighting with water feature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Gallery -->
+    <section class="gallery-section" style="background: var(--light-gray); padding: 100px 2rem;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2 class="category-title">Commercial Projects</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Commercial building">
+                    <div class="project-tag">Wake County</div>
+                    <div class="gallery-overlay">
+                        <h3>Corporate Office</h3>
+                        <p>Brand color lighting & security enhancement</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800" alt="Restaurant">
+                    <div class="project-tag">Downtown Raleigh</div>
+                    <div class="gallery-overlay">
+                        <h3>Fine Dining Restaurant</h3>
+                        <p>Elegant accent lighting & patio ambiance</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800" alt="Retail">
+                    <div class="project-tag">Cary, NC</div>
+                    <div class="gallery-overlay">
+                        <h3>Retail Center</h3>
+                        <p>Seasonal displays & enhanced visibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="category-title">What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We absolutely love our Jellyfish Lights! Charles and Mitchell were professional from start to finish. The installation is nearly invisible during the day, and the colors at night are spectacular. Best investment we've made in our home!"</p>
+                <div class="testimonial-author">Sarah & Mike Johnson</div>
+                <div class="testimonial-location">Cary, NC</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"No more climbing ladders to hang Christmas lights! The app is so easy to use. We change our lights for every holiday and even show our Panthers pride on game days. The Equinox team did an amazing job."</p>
+                <div class="testimonial-author">David Martinez</div>
+                <div class="testimonial-location">Raleigh, NC</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As a business owner, curb appeal is everything. Our new permanent lighting has increased foot traffic and our building looks incredible. The team was professional and finished on schedule. Highly recommend!"</p>
+                <div class="testimonial-author">Jennifer Chen</div>
+                <div class="testimonial-location">Durham, NC</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Property?</h2>
+        <p>Let's create something beautiful together.</p>
+        <a href="contact.html" class="cta-white">Schedule Your Free Estimate</a>
+        <p style="margin-top: 25px; font-size: 1.1rem;">📞 Call: <strong>(919) 555-0100</strong></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Equinox Lighting</h4>
+                <p>North Carolina's premier authorized Jellyfish Lighting dealer, serving residential and commercial clients statewide.</p>
+                <p style="margin-top: 20px;">
+                    <strong>Headquarters:</strong><br>
+                    Cary, NC 27511
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="services.html">Residential Lighting</a>
+                <a href="services.html">Commercial Lighting</a>
+                <a href="services.html">Holiday Lighting</a>
+                <a href="services.html">Security Lighting</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:919-555-0100">(919) 555-0100</a>
+                <a href="/cdn-cgi/l/email-protection#472e292128072236322e29283f6a2b2e202f33346924282a"><span class="__cf_email__" data-cfemail="93fafdf5fcd3f6e2e6fafdfcebbefffaf4fbe7e0bdf0fcfe">[email&#160;protected]</span></a>
+                <p style="margin-top: 15px;">
+                    <strong>Hours:</strong><br>
+                    Mon-Fri: 

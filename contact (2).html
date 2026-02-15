@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Equinox Lighting | Get Your Free Estimate Today</title>
+    <meta name="description" content="Contact Equinox Lighting for permanent LED lighting installation in North Carolina. Free estimates, financing available. Serving Wake County to the coast and mountains.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --miami-pink: #FF1B8D;
+            --cyan-blue: #00d4ff;
+            --navy: #1a1a2e;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--miami-pink);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 180px 2rem 100px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.15rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-method-content h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .contact-method-content p,
+        .contact-method-content a {
+            color: #666;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-method-content a:hover {
+            color: var(--miami-pink);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cyan-blue);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 27, 141, 0.4);
+        }
+
+        /* Service Areas */
+        .service-areas {
+            background: var(--light-gray);
+            padding: 100px 2rem;
+        }
+
+        .areas-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .areas-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--navy);
+            margin-bottom: 25px;
+        }
+
+        .areas-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .area-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .area-card h3 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .area-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .area-list li {
+            padding: 8px 0;
+            color: #666;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .area-list li::before {
+            content: '📍';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Hours */
+        .hours-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+            text-align: center;
+        }
+
+        .hours-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .hours-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 30px;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .hours-grid strong {
+            color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cyan-blue);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--miami-pink);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid,
+            .form-row,
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <svg class="logo-svg" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="62.5" y1="50" x2="287.5" y2="50" stroke="#00d4ff" stroke-width="2.5" opacity="0.4"/>
+                    <circle cx="62.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="118.75" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="175" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="231.25" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="287.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="62.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="118.75" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="175" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="231.25" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="287.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <text x="175" y="110" font-family="'Bebas Neue', sans-serif" font-size="48" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="2">EQUINOX</text>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Free Estimate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>Get Started Today</h1>
+        <p>Schedule your free consultation and discover how permanent LED lighting can transform your property.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Let's Talk About Your Project</h2>
+                <p>Whether you're looking to enhance your home's curb appeal, simplify holiday decorating, or add security lighting, we're here to help. Reach out today for a free, no-obligation consultation.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-method-content">
+                            <h3>Phone</h3>
+                            <a href="tel:919-555-0100">(919) 555-0100</a>
+                            <p>Mon-Fri: 8AM - 6PM | Sat: 9AM - 4PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-method-content">
+                            <h3>Email</h3>
+                            <a href="/cdn-cgi/l/email-protection#ee87808881ae8b9f9b87808196c3828789869a9dc08d8183"><span class="__cf_email__" data-cfemail="771e191118371206021e19180f5a1b1e101f03045914181a">[email&#160;protected]</span></a>
+                            <p>We respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-method-content">
+                            <h3>Location</h3>
+                            <p>Headquarters: Cary, NC 27511</p>
+                            <p>Serving all of North Carolina</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">💳</div>
+                        <div class="contact-method-content">
+                            <h3>Financing Available</h3>
+                            <p>Flexible payment options for all customers</p>
+                            <p>Ask us about our financing programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Request Your Free Estimate</h3>
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Property Address</label>
+                        <input type="text" id="address" name="address" placeholder="Street address, City, NC">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-type">Project Type *</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select a service...</option>
+                            <option value="residential">Residential Lighting</option>
+                            <option value="commercial">Commercial Lighting</option>
+                            <option value="holiday">Holiday Lighting</option>
+                            <option value="security">Security Lighting</option>
+                            <option value="landscape">Landscape Lighting</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" placeholder="What are your goals for this project? Any specific requirements or questions?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Get Your Free Estimate</button>
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #999; text-align: center;">We respect your privacy. Your information will never be shared.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+        <div class="areas-content">
+            <h2>Areas We Serve</h2>
+            <p>Proudly serving homeowners and businesses throughout North Carolina</p>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>Triangle Region</h3>
+                    <ul class="area-list">
+                        <li>Wake County (HQ)</li>
+                        <li>Raleigh</li>
+                        <li>Cary</li>
+                        <li>Durham</li>
+                        <li>Chapel Hill</li>
+                        <li>Apex</li>
+                        <li>Holly Springs</li>
+                        <li>Morrisville</li>
+                    </ul>
+                </div>
+                <div class="area-card">
+                    <h3>Coastal Region</h3>
+                    <ul class="area-list">
+                        <li>Wilmington</li>
+                        <li>New Hanover County</li>
+                        <li>Wrightsville Beach</li>
+                        <li>Carolina Beach</li>
+                        <li>Kure Beach</li>
+                        <li>Topsail Island</li>
+                        <li>Oak Island</li>
+                    </ul>
+                </div>
+                <div class="area-card">
+                    <h3>Mountain Region</h3>
+                    <ul class="area-list">
+                        <li>Asheville</li>
+                        <li>Boone</li>
+                        <li>Blowing Rock</li>
+                        <li>Hendersonville</li>
+                        <li>Brevard</li>
+                        <li>Western NC</li>
+                        <li>Blue Ridge Mountains</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.1rem; color: #666;">
+                <strong>Don't see your city?</strong> We serve all of North Carolina! Give us a call to confirm service in your area.
+            </p>
+        </div>
+    </section>
+
+    <!-- Hours -->
+    <section class="hours-section">
+        <div class="hours-card">
+            <h3>Business Hours</h3>
+            <div class="hours-grid">
+                <div><strong>Monday - Friday</strong></div>
+                <div>8:00 AM - 6:00 PM</div>
+                <div><strong>Saturday</strong></div>
+                <div>9:00 AM - 4:00 PM</div>
+                <div><strong>Sunday</strong></div>
+                <div>Closed</div>
+            </div>
+            <p style="margin-top: 30px; color: #666;">
+                <strong>Emergency Support:</strong> For existing customers with urgent issues, please call our main number and leave a message.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Equinox Lighting</h4>
+                <p>North Carolina's premier authorized Jellyfish Lighting dealer, serving residential and commercial clients statewide.</p>
+                <p style="margin-top: 20px;">
+                    <strong>Headquarters:</strong><br>
+                    Cary, NC 27511
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="services.html">Residential Lighting</a>
+                <a href="services.html">Commercial Lighting</a>
+                <a href="services.html">Holiday Lighting</a>
+                <a href="services.html">Security Lighting</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:919-555-0100">(919) 555-0100</a>
+                <a href="/cdn-cgi/l/email-protection#31585f575e71544044585f5e491c5d58565945421f525e5c"><span class="__cf_email__" data-cfemail="533a3d353c133622263a3d3c2b7e3f3a343b27207d303c3e">[email&#160;protected]</span></a>
+                <p style="margin-top: 15px;">
+                    <strong>Hours:</strong><br>
+                    Mon-Fri: 8AM - 6PM<br>
+                    Sat: 9AM - 4PM
+                </p>
+            </div>
+    

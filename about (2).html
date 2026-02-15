@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Equinox Lighting | North Carolina's Premier Permanent LED Lighting Experts</title>
+    <meta name="description" content="Meet the Equinox Lighting team. North Carolina natives Charles Crook and Mitchell Jones bring expert permanent LED lighting solutions across the state.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --miami-pink: #FF1B8D;
+            --cyan-blue: #00d4ff;
+            --navy: #1a1a2e;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--miami-pink);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 27, 141, 0.4);
+        }
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 180px 2rem 100px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Story Section */
+        .story-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--navy);
+        }
+
+        .story-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--light-gray);
+            padding: 100px 2rem;
+        }
+
+        .team-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 27, 141, 0.15);
+        }
+
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .team-member h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            color: var(--miami-pink);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .team-bio {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--cyan-blue);
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: linear-gradient(135deg, var(--miami-pink), var(--cyan-blue));
+            color: white;
+            padding: 100px 2rem;
+        }
+
+        .why-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .why-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--navy);
+            color: white;
+            padding: 100px 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-white {
+            background: white;
+            color: var(--navy);
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 60px 2rem 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--cyan-blue);
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--miami-pink);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html">
+                <svg class="logo-svg" viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="62.5" y1="50" x2="287.5" y2="50" stroke="#00d4ff" stroke-width="2.5" opacity="0.4"/>
+                    <circle cx="62.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="118.75" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="175" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="231.25" cy="50" r="8" fill="#00d4ff"/>
+                    <circle cx="287.5" cy="50" r="8" fill="#FF1B8D"/>
+                    <circle cx="62.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="118.75" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="175" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <circle cx="231.25" cy="50" r="12" fill="#00d4ff" opacity="0.3"/>
+                    <circle cx="287.5" cy="50" r="12" fill="#FF1B8D" opacity="0.3"/>
+                    <text x="175" y="110" font-family="'Bebas Neue', sans-serif" font-size="48" font-weight="bold" fill="#1a1a2e" text-anchor="middle" letter-spacing="2">EQUINOX</text>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Free Estimate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1>About Equinox Lighting</h1>
+        <p>North Carolina natives bringing innovative permanent LED lighting solutions to homes and businesses across the state.</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="story-content">
+            <div class="story-text">
+                <h2>Our Story</h2>
+                <p>Equinox Lighting was born from a simple frustration that every homeowner knows too well: the annual ritual of climbing ladders, untangling wires, and spending weekends installing and removing holiday lights.</p>
+                <p>We knew there had to be a better way—a permanent solution that would eliminate the hassle while offering year-round versatility. That's when we discovered Jellyfish Lighting and knew we had found something special.</p>
+                <p>As North Carolina natives with deep roots in the home services industry, we've built our reputation on delivering exceptional results and treating every home like our own. We're not just installing lights—we're bringing innovation, convenience, and peace of mind to families across our great state.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Team collaboration">
+            </div>
+        </div>
+
+        <div class="story-content" style="margin-top: 60px;">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800" alt="Professional installation">
+            </div>
+            <div class="story-text">
+                <h2>Why Jellyfish Lighting?</h2>
+                <p>When we decided to enter the permanent lighting industry, we researched every major manufacturer. Jellyfish Lighting stood out for one simple reason: they're the best.</p>
+                <p>Their lights are 3X brighter than competitors, feature UV protection to prevent yellowing, and come with a comprehensive warranty. The app control is intuitive, the installation is nearly invisible, and the quality is unmatched.</p>
+                <p>As authorized Jellyfish Lighting dealers, we're proud to offer our customers the industry's premium product, backed by our commitment to exceptional installation and customer service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-content">
+            <div class="section-header">
+                <h2>Meet Your Local Experts</h2>
+                <p>Born and raised in North Carolina, serving our community with pride</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">CC</div>
+                    <h3>Charles Crook</h3>
+                    <div class="team-role">Co-Founder & CEO</div>
+                    <p class="team-bio">A Raleigh native, Charles brings years of experience in the home services industry. His commitment to quality and customer satisfaction drives every project we undertake. Charles believes that every home deserves to shine, and he's dedicated to making that vision a reality for homeowners across North Carolina. When he's not transforming homes with permanent lighting, you'll find him exploring the Triangle area's best restaurants or cheering on the Carolina Panthers.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">MJ</div>
+                    <h3>Mitchell Jones</h3>
+                    <div class="team-role">Co-Founder & Operations Director</div>
+                    <p class="team-bio">Also born and raised in Raleigh, Mitchell is passionate about bringing innovative solutions to North Carolina homeowners. With extensive experience in project management and customer relations, he ensures every installation exceeds expectations. Mitchell's attention to detail and technical expertise make him the perfect partner for delivering Jellyfish Lighting's cutting-edge technology to our state. Outside of work, Mitchell enjoys hiking in the Blue Ridge Mountains and supporting local NC State athletics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="section-header">
+            <h2>Our Core Values</h2>
+            <p>The principles that guide everything we do</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Excellence</h3>
+                <p>We're committed to delivering flawless installations and exceptional customer service on every single project.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Integrity</h3>
+                <p>Honest pricing, transparent communication, and treating every home like our own.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>Bringing cutting-edge permanent lighting technology to North Carolina homeowners.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🏡</div>
+                <h3>Local Pride</h3>
+                <p>North Carolina natives serving our neighbors with the care they deserve.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⭐</div>
+                <h3>Quality First</h3>
+                <p>We only install Jellyfish Lighting—the industry's premium product with unmatched durability.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💬</div>
+                <h3>Communication</h3>
+                <p>Clear, timely updates throughout your project from estimate to completion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="why-content">
+            <div class="section-header">
+                <h2 style="color: white;">Why Choose Equinox Lighting?</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">We're more than just installers—we're your partners in transforming your home</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h4>✓ Authorized Jellyfish Dealer</h4>
+                    <p>Factory-trained installers with access to the latest products and technology.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✓ Statewide Coverage</h4>
+                    <p>Serving North Carolina from the coast to the mountains with consistent quality.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✓ Local Expertise</h4>
+                    <p>We understand North Carolina homes, weather, and HOA requirements.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✓ Comprehensive Warranty</h4>
+                    <p>Full warranty coverage on all Jellyfish products and our installation work.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✓ Financing Available</h4>
+                    <p>Flexible payment options to make permanent lighting accessible for every budget.</p>
+                </div>
+                <div class="why-item">
+                    <h4>✓ White-Glove Service</h4>
+                    <p>From consultation to final walkthrough, we handle every detail with care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Let's discuss how permanent LED lighting can transform your property.</p>
+        <a href="contact.html" class="cta-white">Schedule Your Free Estimate</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Equinox Lighting</h4>
+                <p>North Carolina's premier authorized Jellyfish Lighting dealer, serving residential and commercial clients statewide.</p>
+                <p style="margin-top: 20px;">
+                    <strong>Headquarters:</strong><br>
+                    Cary, NC 27511
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="services.html">Residential Lighting</a>
+                <a href="services.html">Commercial Lighting</a>
+                <a href="services.html">Holiday Lighting</a>
+                <a href="services.html">Security Lighting</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="tel:919-555-0100">(919) 555-0100</a>
+                <a href="/cdn-cgi/l/email-protection#9bf2f5fdf4dbfeeaeef2f5f4e3b6f7f2fcf3efe8b5f8f4f6"><span class="__cf_email__" data-cfemail="721b1c141d321703071b1c1d0a5f1e1b151a06015c111d1f">[email&#160;protected]</span></a>
+                <p style="margin-top: 15px;">
+                    <strong>Hours:</strong><br>
+                    Mon-Fri: 
